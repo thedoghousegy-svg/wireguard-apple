@@ -16,7 +16,7 @@ let package = Package(
     targets: [
         .target(
             name: "WireGuardKit",
-            dependencies: ["WireGuardKitGo", "WireGuardKitC"]
+            dependencies: ["WireGuardKitGo", "WireGuardKitC", "WireGuardKitGoBridge"]
         ),
         .target(
             name: "WireGuardKitC",
