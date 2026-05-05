@@ -25,16 +25,20 @@ let package = Package(
         ),
         .target(
             name: "WireGuardKitGo",
-            dependencies: [],
+            dependencies: ["WireGuardKitGoBridge"],
             exclude: [
                 "goruntime-boottime-over-monotonic.diff",
                 "go.mod",
                 "go.sum",
                 "api-apple.go",
-                "Makefile"
+                "Makefile",
+                "wg-go.xcframework"
             ],
-            publicHeadersPath: ".",
-            linkerSettings: [.linkedLibrary("wg-go")]
+            publicHeadersPath: "."
+        ),
+        .binaryTarget(
+            name: "WireGuardKitGoBridge",
+            path: "Sources/WireGuardKitGo/wg-go.xcframework"
         )
     ]
 )
